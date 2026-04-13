@@ -45,7 +45,8 @@
     .profile-img img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; background: var(--dark-surface); }
     .profile-name { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
     .profile-bio { font-size: 14px; color: var(--gray); line-height: 1.5; max-width: 320px; margin: 0 auto; }
-    .promo-banner { background: linear-gradient(135deg, var(--teal), #229E97); border-radius: 14px; padding: 14px 20px; margin-bottom: 20px; text-align: center; font-size: 14px; font-weight: 700; color: var(--dark); animation: fadeUp 0.5s ease both; animation-delay: 0.08s; }
+    .promo-banner { display: block; background: linear-gradient(135deg, var(--teal), #229E97); border-radius: 14px; padding: 14px 20px; margin-bottom: 20px; text-align: center; font-size: 14px; font-weight: 700; color: var(--dark); animation: fadeUp 0.5s ease both; animation-delay: 0.08s; text-decoration: none; transition: all 0.25s ease; box-shadow: 0 4px 16px rgba(43,188,179,0.25); cursor: pointer; }
+    .promo-banner:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(43,188,179,0.4); }
     .promo-banner strong { font-weight: 800; }
     .email-capture { background: var(--dark-card); border: 1px solid rgba(43,188,179,0.15); border-radius: 16px; padding: 24px; margin-bottom: 24px; position: relative; overflow: hidden; animation: fadeUp 0.5s ease both; animation-delay: 0.1s; }
     .email-capture::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); }
@@ -157,11 +158,11 @@
 
       // Promo banner
       if (c.promo_banner && c.promo_banner.enabled && (c.promo_banner.title || c.promo_banner.text)) {
-        html += '<div class="promo-banner">';
+        html += '<a href="' + utmSuffix('https://www.clyr.health/intake.html') + '" class="promo-banner" onclick="trackClick(\'promo_banner\')">';
         if (c.promo_banner.title) html += '<div style="font-size:16px;font-weight:800;margin-bottom:3px">' + c.promo_banner.title + '</div>';
         if (c.promo_banner.text) html += '<div style="font-size:13px;font-weight:500;opacity:0.85;margin-bottom:4px">' + c.promo_banner.text + '</div>';
         if (c.promo_banner.code) html += '<div style="font-size:13px;font-weight:700;margin-top:4px">Use Code: <strong style="letter-spacing:1px;font-size:15px">' + c.promo_banner.code + '</strong></div>';
-        html += '</div>';
+        html += '</a>';
       }
 
       // Links
