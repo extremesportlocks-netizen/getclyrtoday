@@ -146,7 +146,12 @@
       html += '<div class="tagline">' + (c.tagline || '') + '</div></div>';
 
       // Profile
-      html += '<div class="profile"><div class="profile-img"><img src="' + (c.profile_image_url || '') + '" alt="' + (c.profile_name || '') + '" onerror="this.parentElement.style.display=\'none\'"></div>';
+      var imgSrc = c.profile_image_data || c.profile_image_url || '';
+      var imgShape = c.profile_image_shape || 'circle';
+      var imgFit = c.profile_image_fit || 'cover';
+      var imgBg = c.profile_image_bg || (c.bg_color || '#0D1B2A');
+      var imgRadius = imgShape === 'circle' ? '50%' : imgShape === 'rounded' ? '18px' : '4px';
+      html += '<div class="profile"><div class="profile-img" style="border-radius:' + imgRadius + ';background:' + imgBg + '"><img src="' + imgSrc + '" alt="' + (c.profile_name || '') + '" style="border-radius:' + imgRadius + ';object-fit:' + imgFit + ';background:' + imgBg + '" onerror="this.parentElement.style.display=\'none\'"></div>';
       html += '<div class="profile-name">' + (c.profile_name || '') + '</div>';
       html += '<div class="profile-bio">' + (c.profile_bio || '') + '</div></div>';
 
