@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLYR — Feel Like Yourself Again</title>
+  <meta name="description" content="Science-backed weight management with licensed providers. Start your journey today.">
+  <meta property="og:title" content="CLYR — Feel Like Yourself Again">
+  <meta property="og:description" content="Science-backed weight management with licensed providers. No insurance needed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getclyrtoday.com">
+  <meta property="og:image" content="https://www.clyr.health/ogimageclyrfinal.png">
+  <link rel="icon" type="image/png" href="https://www.clyr.health/clyricon512.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+
+  <!-- PostHog -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_nrXbGLjvPVa8CpGe3yC27ET4y8se3s3KJyr98anxt2eR', { api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only' });
+  </script>
+
+  <style>
+    :root {
+      --dark: #0D1B2A;
+      --dark-surface: #112240;
+      --dark-card: #1A2F4A;
+      --teal: #2BBCB3;
+      --teal-glow: rgba(43, 188, 179, 0.15);
+      --white: #FFFFFF;
+      --gray: #8B98A5;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { min-height: 100%; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--dark); color: var(--white); min-height: 100vh; overflow-x: hidden; position: relative; }
+    body::before { content: ''; position: fixed; top: -200px; right: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(43,188,179,0.08) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+    body::after { content: ''; position: fixed; bottom: -150px; left: -150px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(43,188,179,0.05) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+    .container { max-width: 440px; margin: 0 auto; padding: 40px 20px 60px; position: relative; z-index: 1; }
+    .header { text-align: center; margin-bottom: 32px; animation: fadeUp 0.5s ease both; }
+    .logo { font-size: 36px; font-weight: 800; letter-spacing: 3px; margin-bottom: 6px; }
+    .logo-dark { color: var(--white); }
+    .logo-teal { color: var(--teal); }
+    .tagline { font-size: 15px; color: var(--gray); font-weight: 400; letter-spacing: 0.5px; }
+    .profile { text-align: center; margin-bottom: 28px; animation: fadeUp 0.5s ease both; animation-delay: 0.05s; }
+    .profile-img { width: 88px; height: 88px; border-radius: 50%; border: 3px solid var(--teal); padding: 3px; margin-bottom: 14px; display: inline-block; }
+    .profile-img img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; background: var(--dark-surface); }
+    .profile-name { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .profile-bio { font-size: 14px; color: var(--gray); line-height: 1.5; max-width: 320px; margin: 0 auto; }
+    .promo-banner { background: linear-gradient(135deg, var(--teal), #229E97); border-radius: 14px; padding: 14px 20px; margin-bottom: 20px; text-align: center; font-size: 14px; font-weight: 700; color: var(--dark); animation: fadeUp 0.5s ease both; animation-delay: 0.08s; }
+    .promo-banner strong { font-weight: 800; }
+    .email-capture { background: var(--dark-card); border: 1px solid rgba(43,188,179,0.15); border-radius: 16px; padding: 24px; margin-bottom: 24px; position: relative; overflow: hidden; animation: fadeUp 0.5s ease both; animation-delay: 0.1s; }
+    .email-capture::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); }
+    .email-label { font-size: 14px; font-weight: 700; color: var(--teal); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+    .email-sub { font-size: 13px; color: var(--gray); margin-bottom: 16px; }
+    .email-form { display: flex; gap: 10px; }
+    .email-input { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 14px 16px; font-size: 15px; color: var(--white); font-family: inherit; outline: none; transition: border-color 0.25s, box-shadow 0.25s; }
+    .email-input::placeholder { color: rgba(255,255,255,0.3); }
+    .email-input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-glow); }
+    .email-btn { background: linear-gradient(135deg, #2BBCB3, #229E97); color: var(--white); border: none; border-radius: 10px; padding: 14px 22px; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap; }
+    .email-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(43,188,179,0.35); }
+    .email-success { display: none; text-align: center; padding: 8px 0; }
+    .email-success .check { font-size: 28px; margin-bottom: 6px; }
+    .email-success p { font-size: 14px; color: var(--teal); font-weight: 500; }
+    .links { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .link-tile { display: flex; align-items: center; gap: 16px; background: var(--dark-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 18px 20px; text-decoration: none; color: var(--white); transition: all 0.25s ease; }
+    .link-tile:hover { transform: translateY(-2px); border-color: rgba(43,188,179,0.2); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .link-text { flex: 1; }
+    .link-title { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+    .link-desc { font-size: 12px; color: var(--gray); }
+    .link-arrow { color: var(--gray); font-size: 18px; transition: color 0.25s, transform 0.25s; }
+    .link-tile:hover .link-arrow { color: var(--teal); transform: translateX(3px); }
+    .featured-cta { display: block; background: linear-gradient(135deg, #2BBCB3, #229E97); border: none; border-radius: 14px; padding: 22px 24px; text-decoration: none; color: var(--white); text-align: center; transition: all 0.25s ease; box-shadow: 0 4px 16px rgba(43,188,179,0.25); margin-bottom: 12px; }
+    .featured-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(43,188,179,0.4); }
+    .featured-cta .link-title { font-size: 18px; margin-bottom: 4px; }
+    .featured-cta .link-desc { color: rgba(255,255,255,0.75); font-size: 13px; }
+    .footer { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); animation: fadeUp 0.5s ease both; animation-delay: 0.4s; }
+    .footer-logo { font-size: 22px; font-weight: 800; letter-spacing: 2px; margin-bottom: 8px; }
+    .footer-text { font-size: 12px; color: rgba(255,255,255,0.25); line-height: 1.6; }
+    .footer-text a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    .footer-text a:hover { color: var(--teal); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .links > *:nth-child(1) { animation: fadeUp 0.5s ease both; animation-delay: 0.15s; }
+    .links > *:nth-child(2) { animation: fadeUp 0.5s ease both; animation-delay: 0.2s; }
+    .links > *:nth-child(3) { animation: fadeUp 0.5s ease both; animation-delay: 0.25s; }
+    .links > *:nth-child(4) { animation: fadeUp 0.5s ease both; animation-delay: 0.3s; }
+    .links > *:nth-child(5) { animation: fadeUp 0.5s ease both; animation-delay: 0.35s; }
+    @media (max-width: 480px) { .container { padding: 32px 16px 48px; } .logo { font-size: 32px; } .email-form { flex-direction: column; } .email-btn { text-align: center; } }
+  </style>
+</head>
+<body>
+  <div class="container" id="app">
+    <!-- Content rendered dynamically from API -->
+    <div style="text-align:center;padding:80px 20px;color:rgba(255,255,255,0.3);font-size:14px">Loading...</div>
+  </div>
+
+  <script>
+    var API = 'https://clyr-backend.onrender.com';
+    var config = null;
+
+    // Default config (fallback if API fails)
+    var defaults = {
+      page_title: 'CLYR', tagline: 'Feel like yourself again.',
+      profile_name: 'CLYR', profile_bio: 'Science-backed weight management with licensed providers. No insurance needed.',
+      profile_image_url: 'https://www.clyr.health/clyricon512.png',
+      bg_color: '#0D1B2A', accent_color: '#2BBCB3', text_color: '#FFFFFF',
+      email_capture: { enabled: true, label: 'Stay in the loop', sublabel: 'Get updates, tips, and early access from CLYR.', button_text: 'Join' },
+      promo_banner: { enabled: false, text: '', code: '' },
+      links: [
+        { id:'1', title:'Start Your Free Consultation', description:'Takes 5 minutes. 100% online.', url:'https://www.clyr.health/intake.html', featured:true, enabled:true, order:0 },
+        { id:'2', title:'Learn About Our Program', description:'How CLYR works, pricing, and what\'s included', url:'https://www.clyr.health', featured:false, enabled:true, order:1 },
+        { id:'3', title:'FAQs', description:'Common questions answered', url:'https://www.clyr.health/#faq', featured:false, enabled:true, order:2 },
+        { id:'4', title:'Contact Us', description:'Questions? We\'re here to help.', url:'https://www.clyr.health/contact.html', featured:false, enabled:true, order:3 }
+      ],
+      footer: { show_legal_links: true, copyright_text: '\u00a9 2026 Clyr Health, LLC. All rights reserved.' }
+    };
+
+    function getParam(name) { return new URLSearchParams(window.location.search).get(name) || ''; }
+
+    function utmSuffix(url) {
+      var s = getParam('utm_source'), m = getParam('utm_medium'), c = getParam('utm_campaign');
+      if (!s && !m && !c) return url;
+      var sep = url.includes('?') ? '&' : '?';
+      var parts = [];
+      if (s) parts.push('utm_source=' + s);
+      if (m) parts.push('utm_medium=' + m);
+      if (c) parts.push('utm_campaign=' + c);
+      return url + sep + parts.join('&');
+    }
+
+    function renderPage(c) {
+      config = c;
+      // Apply colors
+      document.documentElement.style.setProperty('--dark', c.bg_color || '#0D1B2A');
+      document.documentElement.style.setProperty('--teal', c.accent_color || '#2BBCB3');
+      document.body.style.background = c.bg_color || '#0D1B2A';
+      document.title = (c.page_title || 'CLYR') + ' \u2014 ' + (c.tagline || '');
+
+      var links = (c.links || []).filter(function(l) { return l.enabled !== false; }).sort(function(a, b) { return (a.order || 0) - (b.order || 0); });
+      var featured = links.filter(function(l) { return l.featured; });
+      var regular = links.filter(function(l) { return !l.featured; });
+      var ac = c.accent_color || '#2BBCB3';
+
+      var html = '';
+
+      // Header
+      html += '<div class="header"><div class="logo"><span class="logo-dark">' + (c.page_title || 'CLYR').slice(0, -1) + '</span><span class="logo-teal">' + (c.page_title || 'CLYR').slice(-1) + '</span></div>';
+      html += '<div class="tagline">' + (c.tagline || '') + '</div></div>';
+
+      // Profile
+      html += '<div class="profile"><div class="profile-img"><img src="' + (c.profile_image_url || '') + '" alt="' + (c.profile_name || '') + '" onerror="this.parentElement.style.display=\'none\'"></div>';
+      html += '<div class="profile-name">' + (c.profile_name || '') + '</div>';
+      html += '<div class="profile-bio">' + (c.profile_bio || '') + '</div></div>';
+
+      // Promo banner
+      if (c.promo_banner && c.promo_banner.enabled && c.promo_banner.text) {
+        html += '<div class="promo-banner">' + c.promo_banner.text;
+        if (c.promo_banner.code) html += ' &mdash; Use code <strong>' + c.promo_banner.code + '</strong>';
+        html += '</div>';
+      }
+
+      // Email capture
+      if (c.email_capture && c.email_capture.enabled !== false) {
+        html += '<div class="email-capture">';
+        html += '<div class="email-label">' + (c.email_capture.label || 'Stay in the loop') + '</div>';
+        html += '<div class="email-sub">' + (c.email_capture.sublabel || '') + '</div>';
+        html += '<div class="email-form" id="emailForm"><input type="email" class="email-input" id="emailInput" placeholder="your@email.com"><button class="email-btn" id="emailBtn" onclick="captureEmail()">' + (c.email_capture.button_text || 'Join') + '</button></div>';
+        html += '<div class="email-success" id="emailSuccess"><div class="check">\u2713</div><p>You\'re in. We\'ll be in touch.</p></div>';
+        html += '</div>';
+      }
+
+      // Links
+      html += '<div class="links">';
+      featured.forEach(function(l) {
+        html += '<a href="' + utmSuffix(l.url) + '" class="featured-cta" onclick="trackClick(\'' + l.id + '\')">';
+        html += '<div class="link-title">' + l.title + '</div>';
+        if (l.description) html += '<div class="link-desc">' + l.description + '</div>';
+        html += '</a>';
+      });
+      regular.forEach(function(l) {
+        html += '<a href="' + utmSuffix(l.url) + '" class="link-tile" onclick="trackClick(\'' + l.id + '\')">';
+        html += '<div class="link-text"><div class="link-title">' + l.title + '</div>';
+        if (l.description) html += '<div class="link-desc">' + l.description + '</div>';
+        html += '</div><div class="link-arrow">\u2192</div></a>';
+      });
+      html += '</div>';
+
+      // Footer
+      html += '<div class="footer"><div class="footer-logo"><span class="logo-dark">' + (c.page_title || 'CLYR').slice(0, -1) + '</span><span class="logo-teal">' + (c.page_title || 'CLYR').slice(-1) + '</span></div>';
+      html += '<div class="footer-text">' + (c.footer?.copyright_text || '') + '<br>';
+      if (c.footer?.show_legal_links !== false) {
+        html += '<a href="https://www.clyr.health/privacy.html">Privacy</a> \u00b7 <a href="https://www.clyr.health/terms.html">Terms</a> \u00b7 <a href="https://www.clyr.health/telehealth-consent.html">Telehealth Consent</a>';
+      }
+      html += '</div></div>';
+
+      document.getElementById('app').innerHTML = html;
+    }
+
+    // Email capture — reuses existing /api/intake/save-lead
+    async function captureEmail() {
+      var email = document.getElementById('emailInput').value.trim();
+      if (!email || !email.includes('@')) return;
+      var btn = document.getElementById('emailBtn');
+      btn.textContent = '...'; btn.disabled = true;
+      try {
+        if (window.posthog) { posthog.identify(email); posthog.capture('email_captured', { source: 'getclyrtoday', email: email }); }
+        await fetch(API + '/api/intake/save-lead', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, firstName: '', lastName: '', source: 'getclyrtoday', utm_source: getParam('utm_source'), utm_medium: getParam('utm_medium'), utm_campaign: getParam('utm_campaign') })
+        }).catch(function() {});
+        document.getElementById('emailForm').style.display = 'none';
+        document.getElementById('emailSuccess').style.display = 'block';
+      } catch (e) {
+        document.getElementById('emailForm').style.display = 'none';
+        document.getElementById('emailSuccess').style.display = 'block';
+      }
+    }
+
+    function trackClick(linkId) {
+      if (window.posthog) posthog.capture('link_clicked', { link_id: linkId, source: 'getclyrtoday' });
+    }
+
+    // Track page view
+    if (window.posthog) {
+      posthog.capture('link_page_viewed', { source: 'getclyrtoday', utm_source: getParam('utm_source'), utm_medium: getParam('utm_medium'), utm_campaign: getParam('utm_campaign'), referrer: document.referrer });
+    }
+
+    // Load config from API, fallback to defaults
+    fetch(API + '/api/social-link/config').then(function(r) { return r.json(); }).then(function(data) {
+      renderPage(data && data.page_title ? data : defaults);
+    }).catch(function() { renderPage(defaults); });
+
+    // Enter key on email
+    document.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' && document.activeElement && document.activeElement.id === 'emailInput') captureEmail();
+    });
+  </script>
+</body>
+</html>
