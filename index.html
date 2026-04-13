@@ -157,16 +157,6 @@
         html += '</div>';
       }
 
-      // Email capture
-      if (c.email_capture && c.email_capture.enabled !== false) {
-        html += '<div class="email-capture">';
-        html += '<div class="email-label">' + (c.email_capture.label || 'Stay in the loop') + '</div>';
-        html += '<div class="email-sub">' + (c.email_capture.sublabel || '') + '</div>';
-        html += '<div class="email-form" id="emailForm"><input type="email" class="email-input" id="emailInput" placeholder="your@email.com"><button class="email-btn" id="emailBtn" onclick="captureEmail()">' + (c.email_capture.button_text || 'Join') + '</button></div>';
-        html += '<div class="email-success" id="emailSuccess"><div class="check">\u2713</div><p>You\'re in. We\'ll be in touch.</p></div>';
-        html += '</div>';
-      }
-
       // Links
       html += '<div class="links">';
       featured.forEach(function(l) {
@@ -182,6 +172,16 @@
         html += '</div><div class="link-arrow">\u2192</div></a>';
       });
       html += '</div>';
+
+      // Email capture (below links)
+      if (c.email_capture && c.email_capture.enabled !== false) {
+        html += '<div class="email-capture">';
+        html += '<div class="email-label">' + (c.email_capture.label || 'Stay in the loop') + '</div>';
+        html += '<div class="email-sub">' + (c.email_capture.sublabel || '') + '</div>';
+        html += '<div class="email-form" id="emailForm"><input type="email" class="email-input" id="emailInput" placeholder="your@email.com"><button class="email-btn" id="emailBtn" onclick="captureEmail()">' + (c.email_capture.button_text || 'Join') + '</button></div>';
+        html += '<div class="email-success" id="emailSuccess"><div class="check">\u2713</div><p>You\'re in. We\'ll be in touch.</p></div>';
+        html += '</div>';
+      }
 
       // Footer
       html += '<div class="footer"><div class="footer-logo"><span class="logo-dark">' + (c.page_title || 'CLYR').slice(0, -1) + '</span><span class="logo-teal">' + (c.page_title || 'CLYR').slice(-1) + '</span></div>';
