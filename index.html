@@ -159,7 +159,7 @@
 
       // Promo banner
       if (c.promo_banner && c.promo_banner.enabled && (c.promo_banner.title || c.promo_banner.text)) {
-        html += '<a href="' + utmSuffix('https://www.clyr.health/intake.html') + '" class="promo-banner" onclick="trackClick(\'promo_banner\')">';
+        html += '<a href="' + utmSuffix('https://www.clyr.health/intake.html') + '" class="promo-banner" onclick="trackClick(\'promo_banner\',\'promo\',\'Promo Banner\')">';
         if (c.promo_banner.title) html += '<div style="font-size:16px;font-weight:800;margin-bottom:3px">' + c.promo_banner.title + '</div>';
         if (c.promo_banner.text) html += '<div style="font-size:13px;font-weight:500;opacity:0.85;margin-bottom:4px">' + c.promo_banner.text + '</div>';
         if (c.promo_banner.code) html += '<div style="font-size:13px;font-weight:700;margin-top:4px">Use Code: <strong style="letter-spacing:1px;font-size:15px">' + c.promo_banner.code + '</strong></div>';
@@ -169,13 +169,13 @@
       // Links
       html += '<div class="links">';
       featured.forEach(function(l) {
-        html += '<a href="' + utmSuffix(l.url) + '" class="featured-cta" onclick="trackClick(\'' + l.id + '\')">';
+        html += '<a href="' + utmSuffix(l.url) + '" class="featured-cta" onclick="trackClick(\'' + l.id + '\',\'featured\',\'' + (l.title||'').replace(/'/g,'') + '\')">';
         html += '<div class="link-title">' + l.title + '</div>';
         if (l.description) html += '<div class="link-desc">' + l.description + '</div>';
         html += '</a>';
       });
       regular.forEach(function(l) {
-        html += '<a href="' + utmSuffix(l.url) + '" class="link-tile" onclick="trackClick(\'' + l.id + '\')">';
+        html += '<a href="' + utmSuffix(l.url) + '" class="link-tile" onclick="trackClick(\'' + l.id + '\',\'link\',\'' + (l.title||'').replace(/'/g,'') + '\')">';
         html += '<div class="link-text"><div class="link-title">' + l.title + '</div>';
         if (l.description) html += '<div class="link-desc">' + l.description + '</div>';
         html += '</div><div class="link-arrow">\u2192</div></a>';
@@ -201,7 +201,7 @@
         html += '<div style="font-size:13px;font-weight:600;color:' + (c.text_color || '#fff') + ';opacity:0.4;margin-bottom:14px;text-transform:uppercase;letter-spacing:1.5px">Follow us</div>';
         html += '<div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">';
         socials.forEach(function(s) {
-          html += '<a href="' + utmSuffix(s.url) + '" target="_blank" rel="noopener" onclick="trackClick(\'social_' + s.platform + '\')" style="width:44px;height:44px;border-radius:50%;background:' + (sColors[s.platform] || '#333') + ';display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'0 6px 16px rgba(0,0,0,0.3)\'" onmouseout="this.style.transform=\'none\';this.style.boxShadow=\'none\'"><svg viewBox="0 0 24 24" width="20" height="20" fill="#fff">' + (sIcons[s.platform] || '') + '</svg></a>';
+          html += '<a href="' + utmSuffix(s.url) + '" target="_blank" rel="noopener" onclick="trackClick(\'social_' + s.platform + '\',\'social\',\'' + s.platform + '\')" style="width:44px;height:44px;border-radius:50%;background:' + (sColors[s.platform] || '#333') + ';display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'0 6px 16px rgba(0,0,0,0.3)\'" onmouseout="this.style.transform=\'none\';this.style.boxShadow=\'none\'"><svg viewBox="0 0 24 24" width="20" height="20" fill="#fff">' + (sIcons[s.platform] || '') + '</svg></a>';
         });
         html += '</div></div>';
       }
@@ -237,14 +237,22 @@
       }
     }
 
-    function trackClick(linkId) {
-      if (window.posthog) posthog.capture('link_clicked', { link_id: linkId, source: 'getclyrtoday' });
+    function trackClick(linkId, linkType, linkTitle) {
+      if (window.posthog) posthog.capture('link_clicked', { link_id: linkId, link_type: linkType || 'link', source: 'getclyrtoday' });
+      fetch(API + '/api/social-link/click', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ link_id: linkId, link_type: linkType || 'link', link_title: linkTitle || '', referrer: document.referrer, utm_source: getParam('utm_source'), utm_medium: getParam('utm_medium'), utm_campaign: getParam('utm_campaign') })
+      }).catch(function() {});
     }
 
-    // Track page view
+    // Track page view (PostHog + server-side)
     if (window.posthog) {
       posthog.capture('link_page_viewed', { source: 'getclyrtoday', utm_source: getParam('utm_source'), utm_medium: getParam('utm_medium'), utm_campaign: getParam('utm_campaign'), referrer: document.referrer });
     }
+    fetch(API + '/api/social-link/view', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ referrer: document.referrer, utm_source: getParam('utm_source'), utm_medium: getParam('utm_medium'), utm_campaign: getParam('utm_campaign') })
+    }).catch(function() {});
 
     // Load config from API, fallback to defaults
     fetch(API + '/api/social-link/config').then(function(r) { return r.json(); }).then(function(data) {
